@@ -1,0 +1,25 @@
+<% include partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+         <div class="container">
+             <h1 style="text-align: center">Your Friends!</h1>
+             <p style="text-align: center">a place to keep your friends</p>
+            <!--  <p style="text-align: center">
+                <a class="btn btn-primary btn-lg" href="/friends/new">Add New Friend</a>
+             </p> -->
+         </div>
+     </header>
+
+     <p><%= friend.name %></p>
+     <p><%= friend.email %></p>
+     <p><%= friend.comments %></p>
+     
+      <form id="delete" action="/friends/<%= friend._id %>?_method=DELETE" method="POST">
+      <button class="btn btn-danger">Delete</button>
+      </form>
+       <a class="btn btn-link" href="/friends/<%= friend._id %>/edit">Edit</a>
+      <a class="btn btn-link" href="/friends">Go Back</a></p>
+</div>
+
+<% include partials/footer %>
